@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Dataset</title>
+  </head>
+  <body>
+    {% extends "app1/base.html" %}
+    {% block content %}
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">CKD Patient Database</h2>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+              <th scope="col">Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Serum</th>
+              <th scope="col">SG</th>
+              <th scope="col">RBC</th>
+              <th scope="col">PC</th>
+              <th scope="col">PCC</th>
+              <th scope="col">BA</th>
+              <th scope="col">BGR</th>
+              <th scope="col">BU</th>
+              <th scope="col">POT</th>
+              <th scope="col">PCV</th>
+              <th scope="col">WBCC</th>
+              <th scope="col">RBCC</th>
+              <th scope="col">HTN</th>
+              <th scope="col">DM</th>
+              <th scope="col">CAD</th>
+              <th scope="col">PE</th>
+              <th scope="col">ANE</th>
+              <th scope="col">STATUS</th>
+            </tr>
+          </thead>
+          <tbody>
+            </tr>
+            {% for measure in measures %}
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>              
+              <td>{{measure.name}}</td>
+              <td>{{ measure.age }}</td>
+              <td>{{ measure.gender }}</td>
+              <td>{{measure.serum}}</td>
+              <td>{{ measure.sg }}</td>
+              <td>{{ measure.rbc }}</td>
+              <td>{{measure.pc}}</td>
+              <td>{{ measure.pcc }}</td>
+              <td>{{ measure.ba }}</td>
+              <td>{{measure.bgr}}</td>
+              <td>{{ measure.bu }}</td>
+              <td>{{ measure.pot }}</td>
+              <td>{{measure.pcv}}</td>
+              <td>{{ measure.wbcc }}</td>
+              <td>{{ measure.rbcc }}</td>
+              <td>{{measure.htn}}</td>
+              <td>{{ measure.dm }}</td>
+              <td>{{ measure.cad }}</td>
+              <td>{{measure.pe}}</td>
+              <td>{{ measure.ane }}</td>
+              <td>{{ measure.yclass }}</td>
+            </tr>
+            {% endfor %}
+            
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+  </div>
+    
+    
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    {% endblock content %}
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Dataset</title>
+        <style>
+            
+            table,th,td{
+                border:solid 1pt black;
+                border-collapse:collapse;
+                padding:10pt;
+                text-align:center;
+                word-wrap: break-word;
+            }
+            table{
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        </style>
+    </head>
+    <body>
+        {% extends "app1/base.html" %}
+        {% block content %}
+        <h3>
+            CKD Patient Database
+        </h3>
+        
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Serum</th>
+                <th>SG</th>
+                <th>RBC</th>
+                <th>PC</th>
+                <th>PCC</th>
+                <th>BA</th>
+                <th>BGR</th>
+                <th>BU</th>
+                <th>POT</th>
+                <th>PCV</th>
+                <th>WBCC</th>
+                <th>RBCC</th>
+                <th>HTN</th>
+                <th>DM</th>
+                <th>CAD</th>
+                <th>PE</th>
+                <th>ANE</th>
+                <th>STATUS</th>
+            </tr>
+            {% for measure in measures %}
+                <tr>
+                    <td>{{measure.name}}</td>
+                    <td>{{ measure.age }}</td>
+                    <td>{{ measure.gender }}</td>
+                    <td>{{measure.serum}}</td>
+                    <td>{{ measure.sg }}</td>
+                    <td>{{ measure.rbc }}</td>
+                    <td>{{measure.pc}}</td>
+                    <td>{{ measure.pcc }}</td>
+                    <td>{{ measure.ba }}</td>
+                    <td>{{measure.bgr}}</td>
+                    <td>{{ measure.bu }}</td>
+                    <td>{{ measure.pot }}</td>
+                    <td>{{measure.pcv}}</td>
+                    <td>{{ measure.wbcc }}</td>
+                    <td>{{ measure.rbcc }}</td>
+                    <td>{{measure.htn}}</td>
+                    <td>{{ measure.dm }}</td>
+                    <td>{{ measure.cad }}</td>
+                    <td>{{measure.pe}}</td>
+                    <td>{{ measure.ane }}</td>
+                    <td>{{ measure.yclass }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        </centre>
+        {% endblock content %}
+    </body>
+</html>

@@ -1,3 +1,24 @@
 from django.db import models
-
-# Create your models here.
+class Measure(models.Model):
+    name = models.CharField(max_length=30)
+    age = models.IntegerField()
+    gender = models.CharField(max_length=1)
+    serum = models.FloatField()
+    sg = models.FloatField()
+    rbc = models.IntegerField()
+    pc = models.IntegerField()
+    pcc = models.IntegerField()
+    ba = models.IntegerField()
+    bgr = models.IntegerField()
+    bu = models.IntegerField()
+    pot = models.FloatField()
+    pcv = models.IntegerField()
+    wbcc = models.IntegerField()
+    rbcc = models.FloatField()
+    htn = models.IntegerField()
+    dm = models.IntegerField()
+    cad = models.IntegerField()
+    pe = models.IntegerField()
+    ane = models.IntegerField()
+    yclass = models.CharField(max_length=6)
+    date_added = models.DateTimeField(auto_now_add=True)

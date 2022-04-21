@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        {% extends "app1/base.html" %}
+        {% block content %}
+        <p>
+            CKD Prediction home page.
+        </p>
+        <ul>
+            {% for measure in measures %}
+                <li>{{measure.name}} : {{ measure.age }}</li>
+            {% empty %}
+                <li>No patient has been added yet.</li>
+            {% endfor %}
+        </ul>
+
+        <a href ="{% url 'app1:input' %}">Add new patient.</a>
+        <br>
+        <a href ="{% url 'app1:export' %}">Export Data</a>
+        <h2>Enter patient details for ckd diagnosis:</h2>
+        {% endblock content %}
+    </body>
+</html>
