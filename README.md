@@ -1,1 +1,1 @@
-"# ckd_pred" 
+"# Chronic Kidney Disease Prediction Application" 
