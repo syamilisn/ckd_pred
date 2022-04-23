@@ -20,6 +20,10 @@
         <br>
         <a href ="{% url 'app1:export' %}">Export Data</a>
         <h2>Enter patient details for ckd diagnosis:</h2>
+        <a href ="{% url 'app1:predict' %}">
+            <button type="button">PREDICT</button>
+        </a>        
+        <button type="button" onclick="alert('Hello world!')">Click Me!</button>
         {% endblock content %}
     </body>
 </html>
