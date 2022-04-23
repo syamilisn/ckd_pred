@@ -1,0 +1,86 @@
+<html>
+<head><title>predict</title>
+    <style>
+    form{
+        background-color:white;
+    }
+    pre{
+        background-color:black;
+    }
+</style></head>
+<body>
+{% extends "app1/base.html" %}
+{% block content %}
+<div class="container">
+<form method="post" action="{% url 'app1:predict' %}">
+    {% csrf_token %}
+
+    <fieldset>
+        <legend>PREDICT CKD CONDITION</legend>
+        <pre>
+            <label>Name                                            :</label> <input type="text" name="name"/>
+        </pre>
+        <pre>
+            <label>Age (years)                                     :</label> <input type="number" name="age"/>
+        </pre>
+        <pre>
+            <label>Gender (M/F)                                    :</label> <input type="text" name="gender"/>
+        </pre>
+        <pre>
+            <label>Serum Creatinine (μmol/L)                       :</label> <input type="number" name="serum" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Specific Gravity (1.005,1.010,1.015,1.020.1.025):</label> <input type="number" name="sg" step="0.001"/>
+        </pre>
+        <pre>
+            <label>Red Blood Cells (Normal:1, abnormal:0)          :</label> <input type="number" name="rbc" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Pus Cell (Normal:1, abnormal:0)                 :</label> <input type="number" name="pc" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Pus Cell Clumps (Present:1, Not present:0)      :</label> <input type="number" name="pcc" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Bacteria (Present:1, Not present:0)             :</label> <input type="number" name="ba" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Blood Glucose Random (mgs/dl)                   :</label> <input type="number" name="bgr" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Blood Urea (mgs/dl)                             :</label> <input type="number" name="bu" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Potassium (mEq/L)                               :</label> <input type="number" name="pot" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Packed Cell Volume (numerical)                  :</label> <input type="number" name="pcv" step="0.1"/>
+        </pre>
+        <pre>
+            <label>White Blood Cells Count (cells/cumm)            :</label> <input type="number" name="wbcc" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Red Blood Cells Count (millions/cumm)           :</label> <input type="number" name="rbcc" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Hypertension (yes:1, no:2)                      :</label> <input type="number" name="htn" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Diabetes Mellitus (yes:1, no:2)                 :</label> <input type="number" name="dm" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Coronary Artery Disease (yes:1, no:2)           :</label> <input type="number" name="cad" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Pedal Edema (yes:1, no:2)                       :</label> <input type="number" name="pe" step="0.1"/>
+        </pre>
+        <pre>
+            <label>Anemia (yes:1, no:2)                            :</label> <input type="number" name="ane" step="0.1"/>
+        </pre>
+        
+        <button name = "submit"> PREDICT </button>
+    </fieldset>
+</form>
+</div>
+{% endblock content %}
+</body>
