@@ -8,5 +8,6 @@ urlpatterns = [
     path('input/', input, name = 'input'),
     path('export/', export, name = 'export'),
     path('dataset/', dataset, name = 'dataset'),
-    path('predict/', predict, name = 'predict')
+    path('predict/', predict, name = 'predict'),
+    #path('result/', result, name = 'result'),
 ]

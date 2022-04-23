@@ -55,7 +55,20 @@ def predict(request):
             list = [[x for x in dict.values()]]
             ip = [list[0][4:20]]    #input values
             result = randomforest_pred(ip)
-            return HttpResponse(f'The patient is {result}')
+            #return HttpResponse(f'The patient is {result}')
+            #res = dict()
+            #res = {"result":result}
+            temp = {'result':result}
+            context = {'result':temp}
+            return render(request,'app1/result.html',context)
     #display blank or invalid form
     context = {'form':form}
     return render(request,'app1/predict.html', context)
+"""
+def result(request):
+    #measures = Measure.objects.order_by('id')
+    #context = {'result':result.dict()}
+    temp = {'result':'result'}
+    context = {'result':'result'}
+    return render(request, 'app1/result.html',context)
+"""
