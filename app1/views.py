@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .models import Measure
 from .forms import MeasureForm, PredictForm
 from .randomforest import randomforest_pred
+from .calcGFR import main
 
 def index(request):
     measures = Measure.objects.order_by('id')
@@ -58,7 +59,11 @@ def predict(request):
             #return HttpResponse(f'The patient is {result}')
             #res = dict()
             #res = {"result":result}
-            temp = {'result':result}
+
+            #part2: start
+            var, mssg = main('m', 65, 120, 70)
+            #part2: stop
+            temp = {'Result':result,'CKD-EPI':var,'Diagnosis': mssg}
             context = {'result':temp}
             return render(request,'app1/result.html',context)
     #display blank or invalid form

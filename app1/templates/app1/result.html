@@ -1,5 +1,24 @@
-<p>
-    {% for key, value in result.items %}
-    {{ value }}
-{% endfor %}
-</p>
+<html>
+    <head>
+        <title>Result</title>
+    </head>
+    <body>
+        {% extends "app1/base.html" %}
+        {% block content %}
+        <p>
+            CKD Prediction Diagnostics.
+        </p>
+        <ul>
+            {% for key, value in result.items %}
+                <li> {{ key }} : {{ value }} </li>
+            {% endfor %}
+        </ul>
+        {{ result }}
+
+        <a href ="{% url 'app1:index' %}">
+            <button type="button"> HOME </button>
+        </a>        
+        <button type="button" onclick="alert('Hello world!')">Click Me!</button>
+        {% endblock content %}
+    </body>
+</html>

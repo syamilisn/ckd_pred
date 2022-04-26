@@ -2,6 +2,7 @@ from django.db import models
 class Measure(models.Model):
     name = models.CharField(max_length=30)
     age = models.IntegerField()
+    weight = models.FloatField()
     gender = models.CharField(max_length=1)
     serum = models.FloatField()
     sg = models.FloatField()
