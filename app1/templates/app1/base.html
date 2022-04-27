@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-image: url("{% static 'app1/hospital.png' %}");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100%;
+      
+  }
+  </style>
 </head>
 
 <body>
@@ -28,6 +38,11 @@
     <ul class="nav navbar-nav">
         <li><a href=" {% url 'app1:export' %} ">Export Data</a></li>
     </ul>
+    <!--
+    <ul class="nav navbar-nav">
+      <li class="disable"><a href=" {% url 'app1:importcsv' %} ">Import Data</a></li>
+    </ul>
+  -->
     <ul class="nav navbar-nav">
       <li><a href=" {% url 'app1:predict' %} ">Predict CKD</a></li>
     </ul>

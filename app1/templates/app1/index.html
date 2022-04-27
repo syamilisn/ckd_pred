@@ -5,9 +5,11 @@
     <body>
         {% extends "app1/base.html" %}
         {% block content %}
+        <div class="container">
         <p>
             CKD Prediction home page.
         </p>
+        <!--
         <ul>
             {% for measure in measures %}
                 <li>{{measure.name}} : {{ measure.age }}</li>
@@ -15,7 +17,7 @@
                 <li>No patient has been added yet.</li>
             {% endfor %}
         </ul>
-
+        -->
         <a href ="{% url 'app1:input' %}">Add new patient.</a>
         <br>
         <a href ="{% url 'app1:export' %}">Export Data</a>
@@ -24,6 +26,7 @@
             <button type="button">PREDICT</button>
         </a>        
         <button type="button" onclick="alert('Hello world!')">Click Me!</button>
+    </div>
         {% endblock content %}
     </body>
 </html>

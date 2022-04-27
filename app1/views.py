@@ -1,4 +1,5 @@
 import csv
+from datetime import date
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Measure
@@ -77,3 +78,34 @@ def result(request):
     context = {'result':'result'}
     return render(request, 'app1/result.html',context)
 """
+
+def importcsv(request):
+    path = 'app1\Datasets\ckd_clean_16_new.csv'
+    with open(path) as f:
+        reader = csv.reader(f)
+        for row in reader:
+            _, created = Measure.objects.get_or_create(
+                name = row[0],
+                age = row[1],
+                weight = row[2],
+                gender = row[3],
+                serum = row[4],
+                sg = row[5],
+                rbc = row[6],
+                pc = row[7],
+                pcc = row[8],
+                ba = row[9],
+                bgr = row[10],
+                bu = row[11],
+                pot = row[12],
+                pcv = row[13],
+                wbcc = row[14],
+                rbcc = row[15],
+                htn = row[16],
+                dm = row[17],
+                cad = row[18],
+                pe = row[19],
+                ane = row[20],
+                yclass = row[21],
+                )
+    return HttpResponse('You have added data successfully.')
