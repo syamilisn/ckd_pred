@@ -6,6 +6,7 @@ from .models import Measure
 from .forms import MeasureForm, PredictForm
 from .randomforest import randomforest_pred
 from .calcGFR import main
+import random
 
 def index(request):
     measures = Measure.objects.order_by('id')
@@ -62,7 +63,10 @@ def predict(request):
             #res = {"result":result}
 
             #part2: start
-            var, mssg = main('m', 65, 120, 70)
+            age_array = [100, 80, 60, 40, 30, 20, 15]
+            gender_array = ['m','f']
+            random_array = [140,120,100,80,60,50,30,10,5]
+            var, mssg = main(random.choice(gender_array), random.choice(age_array), random.choice(random_array), 70)
             #part2: stop
             temp = {'Result':result,'CKD-EPI':var,'Diagnosis': mssg}
             context = {'result':temp}

@@ -60,13 +60,13 @@ def renal_failure(gfr):
     mark = '\n If the patient has GFR, which corresponds to stages I or II, but has no markers of kidney damage, the diagnosis of CKD is not established.'
 
     if sex == 'm' and age <= 40 and 100 <= gfr <= 130:
-        disease = 'Normal GFR for patient under 40 years of age.'
+        disease = 'Normal GFR for men under 40 years of age.'
     elif sex == 'm' and gfr > 130:
-        disease = 'Increased GFR for patient.'
+        disease = 'Increased GFR for males.'
     elif sex == 'f' and gfr > 120:
-        disease = 'Increased GFR for patient.'
+        disease = 'Increased GFR for women.'
     elif sex == 'f' and age <= 40 and 90 <= gfr <= 120:
-        disease = 'Normal GFR for patient under 40 years of age.'
+        disease = 'Normal GFR for women under 40 years of age.'
     elif gfr >= 90:
         disease = 'Normal or elevated GFR. CKD I stage.'
         disease += mark

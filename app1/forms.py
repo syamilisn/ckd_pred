@@ -4,11 +4,12 @@ from . models import Measure
 class MeasureForm(forms.ModelForm):
     class Meta:
         model = Measure
-        fields = ['name','age','gender','serum','sg','rbc','pc','pcc','ba','bgr','bu','pot','pcv','wbcc','rbcc','htn','dm','cad','pe','ane','yclass']
+        fields = ['name','age','weight','gender','serum','sg','rbc','pc','pcc','ba','bgr','bu','pot','pcv','wbcc','rbcc','htn','dm','cad','pe','ane','yclass']
         
         labels = {
             'name':'Name',
             'age':'Age (years)',
+            'weight': 'Weight',
             'gender':'Gender (M/F)',
             'serum':'Serum Creatinine (μmol/L)',
             'sg':'Specific Gravity (1.005,1.010,1.015,1.020.1.025)',
@@ -33,11 +34,12 @@ class MeasureForm(forms.ModelForm):
 class PredictForm(forms.ModelForm):
     class Meta:
         model = Measure
-        fields = ['name','age','gender','serum','sg','rbc','pc','pcc','ba','bgr','bu','pot','pcv','wbcc','rbcc','htn','dm','cad','pe','ane']
+        fields = ['name','age','weight','gender','serum','sg','rbc','pc','pcc','ba','bgr','bu','pot','pcv','wbcc','rbcc','htn','dm','cad','pe','ane']
         
         labels = {
             'name':'Name',
             'age':'Age (years)',
+            'weight': 'Weight',
             'gender':'Gender (M/F)',
             'serum':'Serum Creatinine (μmol/L)',
             'sg':'Specific Gravity (1.005,1.010,1.015,1.020.1.025)',
