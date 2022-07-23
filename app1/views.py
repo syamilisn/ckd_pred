@@ -60,13 +60,14 @@ def predict(request):
             result = randomforest_pred(ip)
 
             #part2: start
+            name = list[0][0]
             age = list[0][1]
             wt = list [0][2]
             gender = list[0][3]
             sc = list[0][4]
             var, mssg = main(gender,age ,sc ,wt)
             #part2: stop
-            temp = {'Result':result,'CKD-EPI':var,'Diagnosis': mssg}
+            temp = {'Name':name,'Result':result,'CKD-EPI':var,'Diagnosis': mssg}
             context = {'result':temp}
             return render(request,'app1/result.html',context)
     #display blank or invalid form

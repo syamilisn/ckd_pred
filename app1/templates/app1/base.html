@@ -66,7 +66,7 @@
   border-radius:50%;
   border:1px solid #ccc;
   margin:0 10px;
-  color:inherit;
+  color:cadetblue;
   opacity:0.75;
   padding-top: 5px;
 }
@@ -92,19 +92,19 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{% url 'app1:index' %}"><b>CKD Prediction</b></a>
+      <a class="navbar-brand" href="{% url 'app1:index' %}"><b>CKD Diagnosis</b></a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href=" {% url 'app1:index' %} ">Home</a></li>
     </ul>
     <ul class="nav navbar-nav">
-        <li><a href=" {% url 'app1:dataset' %} ">Dataset</a></li>
+        <li><a href=" {% url 'app1:dataset' %} ">Database</a></li>
     </ul>
     <ul class="nav navbar-nav">
-        <li><a href=" {% url 'app1:input' %} ">New Patient</a></li>
+        <li><a href=" {% url 'app1:input' %} ">Register</a></li>
     </ul>
     <ul class="nav navbar-nav">
-        <li><a href=" {% url 'app1:export' %} ">Export Data</a></li>
+        <li><a href=" {% url 'app1:export' %} ">Download</a></li>
     </ul>
     <!--
     <ul class="nav navbar-nav">
@@ -118,8 +118,8 @@
 </nav>
   
 <div class="container">
-  <h3>Django Project: CKD Prediction</h3>
-  <p>Keep track of your health here!</p>
+  <h3>CKD Diagnostic Center: Keep track of your health here!</h3>
+  <hr style="height:2px;border-width:0;color:gray;background-color:cadetblue">
 </div>
 {% block content %}{% endblock content %}
 <div class="footer-basic">
