@@ -3,7 +3,7 @@
         <title>Result</title>
         <style>
             pre{
-                width: 1140px;
+                width: 1120px;
                 align-items: center;
             }
             .dummy{
@@ -29,19 +29,24 @@
                 margin-right:150px;
                 margin-left:150px;
             }
+            .container{
+                background-color: white;
+                padding-bottom: 10px;
+                
+            }
         </style>
     </head>
     <body>
         {% extends "app1/base.html" %}
         {% block content %}
-        <div class = "containerres">
+        <div class = "container">
             <h3 style="margin: 20px;">
                 CKD DIAGNOSTIC REPORT
             </h3>
             <div style="background-color: transparent;margin-left: 10px;margin-right: 10px;">
                 <pre><ul>
                 {% for key, value in result.items %}
-                    <pre style="width: 1040px;font-size: 16;"> {{ key }} : {{ value }} </pre>
+                    <pre style="width: 1020px;font-size: 16;"> {{ key }}  :  {{ value }} </pre>
                 {% endfor %}
             </ul></pre>
             </div>

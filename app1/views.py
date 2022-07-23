@@ -6,8 +6,10 @@ from .models import Measure
 from .forms import MeasureForm, PredictForm
 from .randomforest import randomforest_pred
 from .calcGFRv2 import main
-import random
-
+from io import BytesIO
+from django.template.loader import get_template
+from xhtml2pdf import pisa
+from django.views import View
 def index(request):
     measures = Measure.objects.order_by('id')
     context = {'measures':measures}
@@ -112,3 +114,27 @@ def importcsv(request):
                 yclass = row[21],
                 )
     return HttpResponse('You have added data successfully.')
+
+def renderpdf(template_src, context={}):
+    template = get_template(template_src)
+    html = template.render(context)
+    result = BytesIO()
+    pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")),result)
+    if not pdf.err:
+        return HttpResponse(result.getvalue(), content_type = 'application/ppdf')
+    return None
+
+data={
+    "1":"oje",
+    "2":"dfdf",
+}
+
+class Downloadpdf(View):
+    def get(self,request, *args,**kwargs):
+        pdf = renderpdf('app1/result.html',data)
+        response =  HttpResponse(pdf,content_type= 'application/pdf')
+        #filename = "demo_%s.pdf" %("report")
+        #content = "attachment; filename = '%s'" %(filename)
+        #response['Content-Disposition'] = content
+        response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+        return response
