@@ -1,6 +1,19 @@
 <html>
     <head>
         <title>Home</title>
+        <style>
+            .about{
+                background-color: whitesmoke;
+                width: 100%;
+                text-align: justify;
+                padding: 10px;
+                border-style: double;
+                border-radius: 10px;
+                margin-top: 50px;
+                word-spacing: 1.5pt;
+                line-height: 2;
+            }
+        </style>
     </head>
     <body>
         {% extends "app1/base.html" %}
@@ -8,6 +21,7 @@
         <div class="container">
         <p>
             CKD Prediction home page.
+            
         </p>
         <!--
         <ul>
@@ -28,7 +42,27 @@
         <!--
             <button type="button" onclick="alert('Hello world!')">Click Me!</button>
         -->
+        <div class="about">
+            <h3><b>About Us</b></h3>
+                    The diagnosis for the chronic kidney disease (CKD) and the stages of its severity can be done
+        using a machine by training it with the patient’s lab reports and allowing it to predict the CKD condition
+        using the prior knowledge of the various cases of CKD. The disease is a major issue now-a-days and with
+        the help of the CKD prediction system, it will be easier to predict the disease at its early stages to avoid it. The
+        illness is commonly diagnosed in the age of range 19-40 and more frequently in ages > 40. Here, the waste
+        starts accumulating as the Glomerular Filtration Rate (GFR) decreases overtime, leading to an increase in the
+        impurity of the blood. The CKD condition is progressively predominant in patients with CVD or factors such
+        as dyslipidaemia, diabetes, hypertension, and metabolic disorder. The CKD prediction system will provide the
+        diagnosis which states whether the patient is suffering from the illness or not, also known as the chronic renal
+        disease, which is the continuous malfunction of the kidney for months or even years. It is identified based on
+        the kidney damage or decrease in the glomerular filtration rate (GFR).<br>
+        The disease is increasing rapidly as
+        per the studies which conclude that the hospitalization cases
+        due to CKD have increased by 6.23 percent per year. And the
+        global mortality rate remains fixed. We can help you by providing an instant diagnostic report online.
+
+        </div>
     </div>
+    
         {% endblock content %}
     </body>
 </html>

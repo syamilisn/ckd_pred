@@ -3,24 +3,49 @@
         <title>Result</title>
         <style>
             pre{
-                width: 1200px;
+                width: 1140px;
                 align-items: center;
+            }
+            .dummy{
+        color: transparent;
+        } 
+        button{
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-right: 50px;
+        border-radius: 5px;
+        border-color: grey;
+        text-align: center;
+    }  
+    .containerres{
+                background-color: whitesmoke;
+                text-align: justify;
+                padding: 10px;
+                border-style: double;
+                border-radius: 10px;
+                margin-top: 50px;
+                margin-right:150px;
+                margin-left:150px;
             }
         </style>
     </head>
     <body>
         {% extends "app1/base.html" %}
         {% block content %}
-        <h3 style="margin: 50px;">
-            CKD Prediction Diagnostics.
-        </h3>
-        <div style="background-color: white;margin-left: 140px;margin-right: 140px;">
-            <pre><ul>
-            {% for key, value in result.items %}
-                <pre style="width: 1100px;font-size: 16;"> {{ key }} : {{ value }} </pre>
-            {% endfor %}
-        </ul></pre>
-        </div>
+        <div class = "containerres">
+            <h3 style="margin: 20px;">
+                CKD DIAGNOSTIC REPORT
+            </h3>
+            <div style="background-color: transparent;margin-left: 10px;margin-right: 10px;">
+                <pre><ul>
+                {% for key, value in result.items %}
+                    <pre style="width: 1040px;font-size: 16;"> {{ key }} : {{ value }} </pre>
+                {% endfor %}
+            </ul></pre>
+            </div>
+    </div>
         <!--
         {{ result }}
             -->
@@ -36,6 +61,22 @@
         <!--     
         <button type="button" onclick="alert('Hello world!')">Click Me!</button>
         --> 
+        <div class="dummy">
+            Terms and conditions*
+            Usually, CKD does not give any signs until the kidney is
+        damaged beyond repair. The disease is increasing rapidly as
+        per the studies which conclude that the hospitalization cases
+        due to CKD have increased by 6.23 percent per year. And the
+        global mortality rate remains fixed. There are few diagnostic
+        tests to check the condition of CKD such as:
+        1) eGFR test: It stands for estimated Glomerular Filtration
+        Rate (eGFR), which analyses the rate of filtration by
+        glomeruli, present in the kidneys.
+        2) Urine test: For detecting anomalies in urine that point to
+        defective kidney functions.
+        3) Blood tests: For detecting the presence of serum creatinine
+        or urea in blood.
+        </div>
         {% endblock content %}
     </body>
 </html>

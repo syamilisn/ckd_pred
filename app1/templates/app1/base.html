@@ -8,14 +8,82 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       background-image: url("{% static 'app1/hospital.png' %}");
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: 100%;
-      
-  }
+    }
+ 
+  .footer-basic {
+  padding:5px 0;
+  background-color:#ffffff;
+  color:#4b4c4d;
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:3px;
+}
+
+.footer-basic .social > a {
+  font-size:20px;
+  width:35px;
+  height:35px;
+  line-height:20px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 10px;
+  color:inherit;
+  opacity:0.75;
+  padding-top: 5px;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:0px;
+  text-align:center;
+  font-size:12px;
+  color:#aaa;
+  margin-bottom:0;
+}
+
+/* Credit to https://epicbootstrap.com/snippets/footer-basic */
   </style>
 </head>
 
@@ -51,9 +119,25 @@
   
 <div class="container">
   <h3>Django Project: CKD Prediction</h3>
-  <p>Keep track of your kidney health here!</p>
+  <p>Keep track of your health here!</p>
 </div>
 {% block content %}{% endblock content %}
-
+<div class="footer-basic">
+  <footer>
+      <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+      <!--
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Home</a></li>
+          <li class="list-inline-item"><a href="#">Services</a></li>
+          <li class="list-inline-item"><a href="#">About</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+      </ul>
+    -->
+      <p class="copyright">CKD Prediction Website © 2022</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</div>
 </body>
 </html>

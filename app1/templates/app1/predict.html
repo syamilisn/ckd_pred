@@ -7,6 +7,19 @@
     pre{
         background-color:black;
     }
+    button{
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 50px;
+        border-radius: 5px;
+        border-color: grey;
+        text-align: center;
+    }
+    .dummy{
+        color: transparent;
+    }
 </style></head>
 <body>
 {% extends "app1/base.html" %}
@@ -81,9 +94,28 @@
             <label>Anemia (yes:1, no:0)                            :</label> <input type="number" name="ane" step="0.1"/>
         </pre>
         
-        <button name = "submit"> PREDICT </button>
+      <button name = "submit"> PREDICT </button>  
     </fieldset>
+    
 </form>
+
+
+<div class="dummy">
+    Terms and conditions*
+    Usually, CKD does not give any signs until the kidney is
+damaged beyond repair. The disease is increasing rapidly as
+per the studies which conclude that the hospitalization cases
+due to CKD have increased by 6.23 percent per year. And the
+global mortality rate remains fixed. There are few diagnostic
+tests to check the condition of CKD such as:
+1) eGFR test: It stands for estimated Glomerular Filtration
+Rate (eGFR), which analyses the rate of filtration by
+glomeruli, present in the kidneys.
+2) Urine test: For detecting anomalies in urine that point to
+defective kidney functions.
+3) Blood tests: For detecting the presence of serum creatinine
+or urea in blood.
+</div>
 </div>
 {% endblock content %}
 </body>
