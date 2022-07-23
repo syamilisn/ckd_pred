@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from .models import Measure
 from .forms import MeasureForm, PredictForm
 from .randomforest import randomforest_pred
-from .calcGFR import main
+from .calcGFRv2 import main
 import random
 
 def index(request):
@@ -48,7 +48,7 @@ def predict(request):
         #no data submitted, return blank form
         form = PredictForm()
     else:
-        #POST data is submittes, process data
+        #POST data is submitted, process data
         form = PredictForm(data = request.POST)
         if form.is_valid():
             #form.save(commit=False)
@@ -56,17 +56,15 @@ def predict(request):
             """Write func to use form here"""
             dict = form.cleaned_data
             list = [[x for x in dict.values()]]
-            ip = [list[0][4:20]]    #input values
+            ip = [list[0][5:21]]    #input values
             result = randomforest_pred(ip)
-            #return HttpResponse(f'The patient is {result}')
-            #res = dict()
-            #res = {"result":result}
 
             #part2: start
-            age_array = [100, 80, 60, 40, 30, 20, 15]
-            gender_array = ['m','f']
-            random_array = [140,120,100,80,60,50,30,10,5]
-            var, mssg = main(random.choice(gender_array), random.choice(age_array), random.choice(random_array), 70)
+            age = list[0][1]
+            wt = list [0][2]
+            gender = list[0][3]
+            sc = list[0][4]
+            var, mssg = main(gender,age ,sc ,wt)
             #part2: stop
             temp = {'Result':result,'CKD-EPI':var,'Diagnosis': mssg}
             context = {'result':temp}
