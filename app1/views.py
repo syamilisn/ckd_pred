@@ -69,7 +69,7 @@ def predict(request):
             sc = list[0][4]
             var, mssg = main(gender,age ,sc ,wt)
             #part2: stop
-            temp = {'Name':name,'Result':result,'CKD-EPI':var,'Diagnosis': mssg}
+            temp = {'Name':name,'Result':result,'CKD-GFR':var,'Diagnosis': mssg}
             context = {'result':temp}
             return render(request,'app1/result.html',context)
     #display blank or invalid form
